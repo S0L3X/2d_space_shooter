@@ -5,7 +5,7 @@
 #include "ring_buffer.h"
 
 void draw_meteor( RingBuffer* rb );
-void init_meteors( RingBuffer* rb );
+void init_meteors( RingBuffer* rb, Texture2D* texture );
 
 
 #endif // METEOR_H_
