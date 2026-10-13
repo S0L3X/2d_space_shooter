@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <time.h>
 
+#define UNUSED(x) (void)(x)
+
 #define VIRTUAL_SCREEN_WIDTH 1920
 #define VIRTUAL_SCREEN_HEIGHT 1080
 
@@ -18,7 +20,7 @@
 #define MAX_METEORS 10
 
 #define MAX_LASERS 2
-#define LASER_SPEED 20
+#define LASER_SPEED 600
 
 #define GAME_TITLE "2D Space Shooter"
 
@@ -29,10 +31,15 @@ typedef struct Item Item;
 typedef struct RingBuffer RingBuffer;
 
 typedef enum SpriteType {
-    LASER = 0,
+    PLAYER = 0,
+    LASER,
     METEOR,
+    STAR,
     NUM_SPRITE_TYPES
 } SpriteType;
 
+// static const char* SpriteTypeNames[NUM_SPRITE_TYPES] = {
+//     "PLAYER", "LASER", "METEOR", "STAR"
+// };
 
 #endif // SETTINGS_H_

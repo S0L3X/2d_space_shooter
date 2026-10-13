@@ -2,22 +2,23 @@
 #define RING_BUFFER_H_
 
 #include "settings.h"
+#include "sprite.h"
 
-struct Item {
-    Vector2 position;
-    bool active;
+// struct Item {
+//     Vector2 position;
+//     bool active;
 
-    void ( *update )( Item* );
-};
+//     void ( *update )( Item* );
+// };
 
 struct RingBuffer {
     int id;
     int head;
     int tail;
-    int number_of_items;
-    Item* items;
+    int count;
+    Sprite* items;
 
-    void ( *update )( RingBuffer* );
+    void ( *update )( RingBuffer*, float );
     void* ( *add_item )( RingBuffer* );
 };
 
